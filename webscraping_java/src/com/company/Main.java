@@ -132,7 +132,7 @@ public class Main {
             return Integer.parseInt(pageList.get(1));
     }
 
-    private static void createPdf(ArrayList<String> name, ArrayList<String> link, ArrayList<String> price, PdfPTable table, ArrayList<String> rating, PdfPCell cell) throws FileNotFoundException, DocumentException {
+    private static void createPdf(ArrayList<String> name, ArrayList<String> link, ArrayList<String> price, PdfPTable table, ArrayList<String> rating, PdfPCell cell)  {
 
             for(int j=0;j< name.size();j++){
                 Phrase phrase = new Phrase(name.get(j));
@@ -153,7 +153,7 @@ public class Main {
                 Font links = FontFactory.getFont("Arial", 12, Font.ITALIC,BaseColor.BLUE);
 
 
-                Chunk chunk = new Chunk(link.get(j),links);
+                Chunk chunk = new Chunk("Click to view",links);
                 chunk.setAnchor(link.get(j));
                 phrase.add(chunk);
                 cell = new PdfPCell(phrase);
