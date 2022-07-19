@@ -61,15 +61,15 @@ public class amazonNRI {
             }
 
         }
+        System.out.println("Program ended!!");
         Thread.sleep(1000);
 
         driver.quit();
     }
 
-    private static int getPolicy(String url) throws InterruptedException {
+    private static int getPolicy(String url) {
         try{
             driver.get(url);
-            Thread.sleep(1000);
             String whatTofind = driver.findElement(By.xpath("//div[@id='RETURNS_POLICY']")).findElement(By.tagName("a")).getText();
             if(whatTofind.contains("Non") || whatTofind.contains("Not")){
                 System.out.println(whatTofind);
